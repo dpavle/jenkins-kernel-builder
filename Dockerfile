@@ -18,6 +18,7 @@ RUN apt-get install -y \
 	flex \ 
 	bc \
 	kmod \
+	wget \
 	libssl-dev  
 
 # install thinBackup plugin
