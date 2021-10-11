@@ -21,6 +21,16 @@ RUN apt-get install -y \
 	wget \
 	libssl-dev  
 
+## ccache ########################################################
+
+# Update symlinks
+RUN /usr/sbin/update-ccache-symlinks
+
+# Prepend ccache into the PATH
+RUN echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+
+##################################################################
+
 # install thinBackup plugin
 RUN jenkins-plugin-cli --plugins thinBackup
 
